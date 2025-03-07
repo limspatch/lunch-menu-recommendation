@@ -24,7 +24,7 @@ async function askGPT(question) {
     });
 
     console.log("\n🤖 ChatGPT: " + response.choices[0].message.content);
-    askForNextQuestion(); // 다음 질문 입력 받기
+    askForNextQuestion(); // Next question
   } catch (error) {
     console.error("❌ 오류 발생:", error.message);
   }
@@ -36,10 +36,10 @@ function askForNextQuestion() {
       console.log("👋 종료합니다. 맛있게 드세요!");
       rl.close();
     } else {
-      askGPT(newQuestion); // 새 질문으로 다시 요청
+      askGPT(newQuestion); // New question
     }
   });
 }
 
-// 최초 실행 (기본 질문)
+// First question
 askGPT("신촌에서 대학생들이 1만원 이하로 부담없이 먹을만한 점심 메뉴 추천해줘.");
