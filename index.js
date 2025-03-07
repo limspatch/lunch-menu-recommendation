@@ -3,13 +3,13 @@ import { config } from "dotenv";
 import OpenAI from "openai";
 import readline from "readline";
 
-config(); // .env 파일 로드
+config(); // load .env file
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // API 키 설정
+  apiKey: process.env.OPENAI_API_KEY, // Set API Key
 });
 
-// 사용자 입력을 받기 위한 인터페이스
+// Interface for user input
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -43,7 +43,3 @@ function askForNextQuestion() {
 
 // 최초 실행 (기본 질문)
 askGPT("신촌에서 대학생들이 1만원 이하로 부담없이 먹을만한 점심 메뉴 추천해줘.");
-
-// 실행 방법
-// lunch-gpt로 이동
-// node index.js
